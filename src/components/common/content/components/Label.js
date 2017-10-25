@@ -5,25 +5,10 @@ class Label extends Component {
         super(props);        
     }
   
-  render() {
-    let render_visual;
-    switch(this.props.onlyContent){
-        case true:
-        render_visual=(
-            <div>
-                <h5>Id : {this.props.id} Title : {this.props.title}</h5>        
-            </div>
-            );
-    break;
-    case false:
-          render_visual=(<div></div>);
-    break;
-          
-    }   
-
+  render() { 
     return (
         <div className="thumbnail" style={{border:"none"}}>
-            {render_visual}
+            <h5>Id : {this.props.id} Title : {this.props.title}</h5>        
         </div>            
     );
   }

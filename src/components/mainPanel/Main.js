@@ -8,9 +8,14 @@ class Main extends React.Component{
   constructor(props) {
     super(props);
   
+    let temp_content_list;
+    
+    temp_content_list=contentMapTmp;
+
+    //creation of an initial state, a json object
     this.state = {
-      contentMap:contentMapTmp,
-    }
+      content_list:temp_content_list,            
+    }; 
   }
  
   render() {
@@ -24,18 +29,7 @@ class Main extends React.Component{
         </div>
         <div className='col-md-3 col-lg-3 height-100'>
           <Content
-            id="ID1"
-            src="http://www.troispointzero.fr/wp-content/uploads/2016/03/reactjs.png"
-            type="img"
-            title="test"
-            onlyContent={true}
-          />
-          <Content
-            id="ID2"
-            src="http://www.troispointzero.fr/wp-content/uploads/2016/03/reactjs.png"
-            type="img"
-            title="test"
-            onlyContent={false}
+            contents={this.state.content_list}
           />
         </div>
       </div>
