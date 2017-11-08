@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Label from '../components/Label'
 import Visual from '../components/Visual'
-import './Content.css'
+import './content.css'
 
 
 class Content extends React.Component{

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './Main.css';
+import './main.css';
 import BrowseContentPanel from  '../browseContentPanel/containers/BrowseContentPanel'
+import BrowsePresentationPanel from  '../browsePresentationPanel/containers/BrowsePresentationPanel'
 import '../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css'
 
 class Main extends React.Component{
@@ -16,6 +17,7 @@ class Main extends React.Component{
         <div className='col-md-3 col-lg-3 height-100 vertical-scroll'>
         </div>
         <div className='col-md-6 col-lg-6 height-100'>
+          <BrowsePresentationPanel/>
         </div>
         <div className='col-md-3 col-lg-3 height-100'>
           <BrowseContentPanel/>
