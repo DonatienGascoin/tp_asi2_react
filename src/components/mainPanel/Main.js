@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
 import './Main.css';
+import BrowseContentPanel from  '../browseContentPanel/containers/BrowseContentPanel'
 import '../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css'
-import * as contentMapTmp from '../../source/contentMap.json'
 
-export default class Main extends React.Component{
+class Main extends React.Component{
   constructor(props) {
     super(props);
-  
-    this.state = {
-      contentMap:contentMapTmp,
-    }
   }
  
   render() {
@@ -23,10 +18,12 @@ export default class Main extends React.Component{
         <div className='col-md-6 col-lg-6 height-100'>
         </div>
         <div className='col-md-3 col-lg-3 height-100'>
+          <BrowseContentPanel/>
         </div>
       </div>
     </div>
     );
   }
 }
+export default Main;
 
