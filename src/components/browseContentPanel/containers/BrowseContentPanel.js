@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Content from '../../common/content/containers/Content'
-import './BrowseContentPanel.css'
+import './browseContentPanel.css'
 import * as contentMapTmp from '../../source/contentMap.json'
 
 class BrowseContentPanel extends React.Component{
