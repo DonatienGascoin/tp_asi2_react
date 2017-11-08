@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Label from '../components/Label'
 import Visual from '../components/Visual'
+import EditMetaSlid from '../components/EditMetaSlid'
 import './slid.css'
 
 
@@ -32,6 +33,8 @@ class Slid extends React.Component{
 
             case "FULL_MNG":
             slidResult=[
+
+
             ]
             break;  
         }
