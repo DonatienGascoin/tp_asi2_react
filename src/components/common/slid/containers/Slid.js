@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Label from '../components/Label'
 import Visual from '../components/Visual'
 import EditMetaSlid from '../components/EditMetaSlid'
+import Content from '../../content/containers/Content'
 import './slid.css'
 
 
@@ -31,10 +32,23 @@ class Slid extends React.Component{
             ]
             break;
 
+
             case "FULL_MNG":
             slidResult=[
+              <div className="panel-body border" key={2}>
+                <EditMetaSlid
+                  title = {this.props.contentsSlid.title} 
+                  txt = {this.props.contentsSlid.txt}
+                />     
+                <Content 
+                  id={this.props.contentsSlid.content}
+                  onlyContent={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].onlyContent}
+                  type={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].type}
+                  src={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].src}                    
+                  title={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].title}
+                />         
 
-
+              </div>
             ]
             break;  
         }
@@ -42,10 +56,10 @@ class Slid extends React.Component{
     }
 
     render() {
-        const display_list= this.getSlidRender();
+        const display_slid= this.getSlidRender();
         return (
           <div>
-            {display_list}
+            {display_slid}
           </div>
         );
       }

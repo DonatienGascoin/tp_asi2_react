@@ -7,48 +7,46 @@ import './content.css'
 class Content extends React.Component{
   constructor(props) {
     super(props);
-    this.getAllContentRender=this.getAllContentRender.bind(this);
+    this.getContentRender=this.getContentRender.bind(this);
   }
 
-  getAllContentRender(){
-    let array_render=[];
-    
-    for(var i=0;i<this.props.contents.contents.length;i++){
-      switch(this.props.contents.contents[i].onlyContent){
+  getContentRender(){
+    var result;
+      switch(this.props.onlyContent){
         case true:
-          array_render.push(
-            <div className="panel-body border" key={i}>
+        result=[
+            <div className="panel-body border" key={1}>
               <Visual 
-                src={this.props.contents.contents[i].src} 
-                type={this.props.contents.contents[i].type} 
+                src={this.props.src} 
+                type={this.props.type} 
               />
             </div>
-          );
+        ]
         break;
         case false:
-          array_render.push(
-            <div className="panel-body border" key={i}>
+        result=[
+              <div className="panel-body border" key={2}>
               <Visual 
-                src={this.props.contents.contents[i].src} 
-                type={this.props.contents.contents[i].type} 
+                src={this.props.src} 
+                type={this.props.type} 
               />
               <Label 
-                id={this.props.contents.contents[i].id}
-                title={this.props.contents.contents[i].title}
+                id={this.props.id}
+                title={this.props.title}
               />
             </div>
-          );
+        ]
         break;  
         }
+        return result;
     }
-    return array_render;
-  }
+  
  
   render() {
-    const display_list= this.getAllContentRender();
+    const display_content= this.getContentRender();
     return (
       <div>
-        {display_list}
+        {display_content}
       </div>
     );
   }
