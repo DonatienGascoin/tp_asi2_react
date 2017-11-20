@@ -14,11 +14,11 @@ class EditSlidPanel extends React.Component{
     //creation of an initial state, a json object
     this.state = {
       content_list:temp_content_list,   
-      id:0,
+      id:0, //Id du Slid
       title:"Test :) !",
       txt:"blabla",
-      displayMode:"SHORT",
-      content:3
+      displayMode:"FULL_MNG", // FULL_MNG ou SHORT
+      content:3 //id du contenu du Slid
     }; 
   }
  
