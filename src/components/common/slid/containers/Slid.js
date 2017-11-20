@@ -16,6 +16,7 @@ class Slid extends React.Component{
     
     getSlidRender(){
         let slidResult;
+        
           switch(this.props.contentsSlid.displayMode){
             case "SHORT":
               slidResult=[
@@ -51,7 +52,7 @@ class Slid extends React.Component{
               </div>
             ]
             break;  
-        }
+    }
         return slidResult;
     }
 
