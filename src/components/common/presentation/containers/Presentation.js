@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './presentation.css';
 import EditMetaPres from '../components/EditMetaPres'
+import SlidList from '../components/SlidList'
 import * as contentMapTmp from '../../../source/contentMap.json'
 import * as contentPresTmp from '../../../source/pres.json'
 
@@ -30,36 +31,14 @@ class Presentation extends React.Component{
 
     handleChangeTitle(e){
         this.setState({title:e.target.value});
-        }
+    }
 
     handleChangeDescription(e){
         this.setState({description:e.target.value});
-      }
+    }
     
 
-
-
-    getListSlidePresentationRender(){
-
-        var arrayPresContent = []
-        for(var index = 0; index < this.state.content_pres_list.slidArray.length; index++) {
-            arrayPresContent.push(
-            <div className="panel-body border" key={index}>
-            <Slid 
-                id={this.state.content_pres_list[index].id}  //id du slid
-                title={this.state.content_pres_list[index].title}
-                txt={this.state.content_pres_list[index].txt}
-                content={this.state.content_pres_list[index].content_id} //id du content
-                displayMode="SHORT"
-            />
-            </div>
-            )
-        }
-        return arrayPresContent;
-    }
-
-
-    getMetaPresentationRender(){
+    getPresentationRender(){
 
         let presentationResult=[
             <div className="panel-body border" key="1">
@@ -69,6 +48,11 @@ class Presentation extends React.Component{
                     handleChangeDescription = {this.handleChangeDescription}
                     handleChangeTitle = {this.handleChangeTitle}
                 />  
+                <SlidList 
+                    content_pres_list={this.state.content_pres_list}
+                    content_list={this.state.content_list}
+
+                />
             </div>
         ]
         return presentationResult;
@@ -77,12 +61,10 @@ class Presentation extends React.Component{
 
 
   render() {
-      var metaPresentationSlid = this.getMetaPresentationRender();
-      var listPresentationSlid = this.getListSlidePresentationRender();
+      var PresentationSlid = this.getPresentationRender();
     return (
         <div>
-        {metapresentationSlid}
-        {listPresentationSlid}
+        {PresentationSlid}
         </div>
     );
   }
