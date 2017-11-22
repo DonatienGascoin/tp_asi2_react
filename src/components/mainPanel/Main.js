@@ -18,7 +18,10 @@ class Main extends React.Component{
     <div className='container-fluid height-100'>
       <div className="row height-100">
         <div className='col-md-3 col-lg-3 height-100 vertical-scroll'>
-          <Presentation />
+        <Presentation 
+          title="Présentation :) !"
+          description="description"
+        />
         </div>
 
         <div className='col-md-6 col-lg-6 height-100'>
@@ -47,4 +50,3 @@ class Main extends React.Component{
   }
 }
 export default Main;
-

@@ -16,14 +16,14 @@ export default class editMetaPres extends React.Component{
                     onChange={this.props.handleChangeTitle}
                     value={this.props.title}
                 />
-                <label htmlFor="currentSlideText">Text</label>
+                <label htmlFor="currentSlideText">Description</label>
                 <textarea
                     rows="5"
                     type="text"
                     className="form-control"
                     id="currentSlideText"
-                    onChange={this.props.handleChangeTxt}
-                    value={this.props.txt}>
+                    onChange={this.props.handleChangeDescription}
+                    value={this.props.description}>
                 </textarea>
             </div>
         );
