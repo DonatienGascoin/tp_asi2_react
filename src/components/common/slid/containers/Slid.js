@@ -11,11 +11,28 @@ class Slid extends React.Component{
     constructor(props) {
       super(props);
       this.getSlidRender=this.getSlidRender.bind(this);    
+      this.state= {
+        title:this.props.contentsSlid.title, 
+        txt:this.props.contentsSlid.txt
+      };
+      this.handleChangeTitle=this.handleChangeTitle.bind(this);
+      this.handleChangeTxt=this.handleChangeTxt.bind(this);
     }
 
-    
+
+    handleChangeTitle(e){
+    console.log("Dans handleChangeTitle")
+    this.setState({title:e.target.value});
+    }
+
+    handleChangeTxt(e){
+      this.setState({txt:e.target.value});
+    }
+  
+
     getSlidRender(){
         let slidResult;
+        
           switch(this.props.contentsSlid.displayMode){
             case "SHORT":
               slidResult=[
@@ -37,8 +54,10 @@ class Slid extends React.Component{
             slidResult=[
               <div className="panel-body border" key={2}>
                 <EditMetaSlid
-                  title = {this.props.contentsSlid.title} 
-                  txt = {this.props.contentsSlid.txt}
+                  title = {this.props.title} 
+                  txt = {this.props.txt}
+                  handleChangeTitle={this.handleChangeTitle}
+                  handleChangeTxt={this.handleChangeTxt}
                 />     
                 <Content 
                   id={this.props.contentsSlid.content}
@@ -46,12 +65,17 @@ class Slid extends React.Component{
                   type={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].type}
                   src={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].src}                    
                   title={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].title}
-                />         
+                /> 
 
+                <Label 
+                  title={this.state.title} 
+                  txt={this.state.txt} 
+                />
               </div>
+
             ]
             break;  
-        }
+    }
         return slidResult;
     }
 
@@ -59,7 +83,7 @@ class Slid extends React.Component{
         const display_slid= this.getSlidRender();
         return (
           <div>
-            {display_slid}
+            {display_slid}              
           </div>
         );
       }
