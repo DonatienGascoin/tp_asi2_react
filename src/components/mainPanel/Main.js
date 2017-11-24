@@ -4,6 +4,7 @@ import BrowseContentPanel from  '../browseContentPanel/containers/BrowseContentP
 import EditSlidPanel from  '../editSlidPanel/containers/EditSlidPanel'
 import Presentation from '../common/presentation/containers/Presentation'
 import '../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css'
+import { createStore } from 'redux';
 
 class Main extends React.Component{
   constructor(props) {
