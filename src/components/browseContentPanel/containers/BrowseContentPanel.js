@@ -13,7 +13,7 @@ class BrowseContentPanel extends React.Component{
     //creation of an initial state, a json object
     this.state = {
       content_list:temp_content_list,            
-    }; 
+    };  
   }
  
 

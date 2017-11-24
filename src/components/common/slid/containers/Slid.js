@@ -12,8 +12,8 @@ class Slid extends React.Component{
       super(props);
       this.getSlidRender=this.getSlidRender.bind(this);    
       this.state= {
-        title:this.props.contentsSlid.title, 
-        txt:this.props.contentsSlid.txt
+        title:this.props.contentsSlid.selected_slid.title, 
+        txt:this.props.contentsSlid.selected_slid.txt
       };
       this.handleChangeTitle=this.handleChangeTitle.bind(this);
       this.handleChangeTxt=this.handleChangeTxt.bind(this);
@@ -33,17 +33,17 @@ class Slid extends React.Component{
     getSlidRender(){
         let slidResult;
         
-          switch(this.props.contentsSlid.displayMode){
+          switch(this.props.contentsSlid.selected_slid.displayMode){
             case "SHORT":
               slidResult=[
                 <div className="panel-body border" key={1}>
                   <Label 
-                    title={this.props.contentsSlid.title} 
-                    txt={this.props.contentsSlid.txt}
+                    title={this.props.contentsSlid.selected_slid.title} 
+                    txt={this.props.contentsSlid.selected_slid.txt}
                   />
                   <Visual
-                    type={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].type}
-                    src={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].src}                    
+                    type={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.selected_slid.content].type}
+                    src={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.selected_slid.content].src}                    
                   />
                 </div>
             ]
@@ -60,11 +60,11 @@ class Slid extends React.Component{
                   handleChangeTxt={this.handleChangeTxt}
                 />     
                 <Content 
-                  id={this.props.contentsSlid.content}
-                  onlyContent={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].onlyContent}
-                  type={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].type}
-                  src={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].src}                    
-                  title={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.content].title}
+                  id={this.props.contentsSlid.selected_slid.content}
+                  onlyContent={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.selected_slid.content].onlyContent}
+                  type={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.selected_slid.content].type}
+                  src={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.selected_slid.content].src}                    
+                  title={this.props.contentsSlid.content_list.contents[this.props.contentsSlid.selected_slid.content].title}
                 /> 
 
                 <Label 

@@ -12,32 +12,26 @@ class Main extends React.Component{
 
  
   render() {
-    
+    var selected_slid={
+      id:"0", //Id du Slid
+      title:"Test :) !",
+      txt:"blabla",
+      displayMode:"FULL_MNG", // FULL_MNG ou SHORT
+      content:"3" //id du contenu du Slid/>
+    };
 
     return (
     <div className='container-fluid height-100'>
       <div className="row height-100">
         <div className='col-md-3 col-lg-3 height-100 vertical-scroll'>
           <Presentation 
-            title="Présentation :) !"
-            description="description"
+              title="Présentation :) !"
+              description="description"
           />
         </div>
 
         <div className='col-md-6 col-lg-6 height-100'>
-          <EditSlidPanel   
-            id="0" //Id du Slid
-            title="Test :) !"
-            txt="blabla"
-            displayMode="SHORT" // FULL_MNG ou SHORT
-            content="3" //id du contenu du Slid/>
-          />
-          <EditSlidPanel  
-            id="0" //Id du Slid
-            title="Test :) !"
-            txt="blabla"
-            displayMode="FULL_MNG" // FULL_MNG ou SHORT
-            content="3" //id du contenu du Slid/>
+          <EditSlidPanel  selected_slid={selected_slid}            
           />
         </div>
 
@@ -50,3 +44,12 @@ class Main extends React.Component{
   }
 }
 export default Main;
+
+
+/* 
+  id="0" //Id du Slid
+            title="Test :) !"
+            txt="blabla"
+            displayMode="FULL_MNG" // FULL_MNG ou SHORT
+            content="3" //id du contenu du Slid/>
+            */

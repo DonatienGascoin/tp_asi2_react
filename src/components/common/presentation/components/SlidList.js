@@ -16,18 +16,20 @@ class SlidList extends React.Component{
         }
         
     }
-
-
     getListSlidePresentationRender(){
         var arrayPresContent = []
         for(var index = 0; index < this.state.content_pres_list.slidArray.length; index++) {
-            let contentsSlid={
-                content_list:this.state.content_list,
+            let selected_slid={
                 id:this.state.content_pres_list.slidArray[index].id,  //id du slid
                 title:this.state.content_pres_list.slidArray[index].title,      
                 txt:this.state.content_pres_list.slidArray[index].txt,
                 content:this.state.content_pres_list.slidArray[index].content_id,  //id du content
                 displayMode:"SHORT"
+            };
+            
+            let contentsSlid = {
+                content_list:this.state.content_list,
+                selected_slid:selected_slid
             };
 
             arrayPresContent.push(
